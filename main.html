@@ -2,8 +2,19 @@
 <html>
     <head>
         <title>D3 Testing Grounds</title>
-    </head>   
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+    </head>
     <body>
-        
+        <div class="charts">
+            <svg class="tutorial"></svg>
+            <svg class="scatterplot"></svg>
+            <svg class="barchart"></svg>
+            <svg class="barcodechart"></svg>
+        </div>
+
+        <script type="module" src="charts/tutorial.js"></script>
+        <script type="module" src="charts/scatterplot.js"></script>
+        <script type="module" src="charts/barchart.js"></script>
     </body>
 </html>
