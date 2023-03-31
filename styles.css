@@ -9,3 +9,7 @@
     height: 750px;
     border: 1px solid black;
 }
+
+.charts > .wide {
+    width: 800px;
+}

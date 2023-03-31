@@ -1,5 +1,10 @@
 # D3 Testing Grounds
 
+## How to Use
+
+-   Run using http-server -c-1 -p 8000
+-   http://127.0.0.1:8000/main.html
+
 ## Visualizations
 
 -   [Tutorial](https://www.w3schools.com/ai/ai_d3js.asp)

@@ -1,4 +1,4 @@
-import { margin, xMax, yMax} from './dimensions.js';
+import { margin, marginLeft, xMax, yMax} from './dimensions.js';
 
 // Parse CSV Data
 const data = await d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv");
@@ -6,7 +6,7 @@ const data = await d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/
 // Append SVG Object to the Page
 const svg = d3.select('.charts').select(".barchart")
   .append("g")
-  .attr("transform","translate(" + margin + "," + margin + ")");
+  .attr("transform","translate(" + marginLeft + "," + margin + ")");
 
 // X Axis
 const x = d3.scaleLinear()
@@ -24,12 +24,12 @@ const y = d3.scaleBand()
   .padding(0.1);
 
 svg.append("g")
-  .call(d3.axisLeft(y))
-  .selectAll("text")
-      .attr("transform", "translate(-15, -10)rotate(-90)")
-      .style("text-anchor", "middle");
+  .call(d3.axisLeft(y));
+  // .selectAll("text")
+  //     .attr("transform", "translate(-15, -10)rotate(-90)")
+  //     .style("text-anchor", "middle");
 
-// Dots
+// Bars
 svg.append('g')
   .selectAll("bar")
   .data(data).enter()
