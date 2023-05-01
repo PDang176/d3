@@ -17,5 +17,31 @@
         <script type="module" src="charts/scatterplot.js"></script>
         <script type="module" src="charts/barchart.js"></script>
         <script type="module" src="charts/barcodechart.js"></script>
+        <script>
+            const json = {
+                ford: {
+                    2: 0.2,
+                    5: 0.5,
+                    7: 0.3,
+                },
+                subaru: {
+                    3: 0.3,
+                    5: 0.5,
+                    8: 0.7,
+                },
+            }
+
+            console.log('json', json)
+
+            console.log(Object.keys(json))
+            console.log(Object.values(json))
+            console.log([
+                ...new Set(
+                    Object.values(json)
+                        .map((d) => Object.keys(d))
+                        .flat(1)
+                ),
+            ])
+        </script>
     </body>
 </html>
