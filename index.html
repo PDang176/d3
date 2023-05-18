@@ -19,29 +19,32 @@
         <script type="module" src="charts/barcodechart.js"></script>
         <script>
             const json = {
-                ford: {
-                    2: 0.2,
-                    5: 0.5,
-                    7: 0.3,
-                },
-                subaru: {
-                    3: 0.3,
-                    5: 0.5,
-                    8: 0.7,
+                'Category A': { 2023143: 1, 2023147: 1, 2023155: 1 },
+                'Category C': { 2023146: 1, 2023148: 1, 2023156: 1 },
+                'Category B': {
+                    2023138: 1,
+                    2023151: 1,
+                    2023156: 1,
+                    2023163: 1,
                 },
             }
+            console.log('Json', json)
 
-            console.log('json', json)
-
-            console.log(Object.keys(json))
-            console.log(Object.values(json))
-            console.log([
-                ...new Set(
-                    Object.values(json)
-                        .map((d) => Object.keys(d))
-                        .flat(1)
-                ),
-            ])
+            console.log('Keys', Object.keys(json))
+            console.log('Values', Object.values(json))
+            console.log('Entries', Object.entries(json))
+            console.log(
+                'Flat Values',
+                Object.values(json)
+                    .map((d) => Object.keys(d))
+                    .flat(1)
+            )
+            console.log(
+                'Flat Keys',
+                Object.entries(json)
+                    .map((d) => Array(Object.keys(d[1]).length).fill(d[0]))
+                    .flat(1)
+            )
         </script>
     </body>
 </html>
